@@ -1,41 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-const UnderlinedMessage = () => {
-  return (
-    <div>
-      <u>Hola Mundo</u>
-    </div>
-  );
-};
-
-const ItalicBlock = () => {
-  return (
-    <div>
-      <em>Olá Mundo</em>
-      <UnderlinedMessage />
-    </div>
-  );
-};
-
-const StrongBlock = () => {
-  return (
-    <div>
-      <strong>Hello World</strong>
-    </div>
-  );
-};
+import PersonInformation from './components/PersonInformation';
+import CityInformation from './components/CityInformation';
 
 const App = () => {
   return (
     <div className="App">
-      <StrongBlock />
-      <ItalicBlock />
-      <ItalicBlock />
-      <StrongBlock />
-      <StrongBlock />
-      <StrongBlock />
+      <CityInformation name="Lisbon">
+        <span>Latitude: 38</span>
+        <img src="https://source.unsplash.com/random" alt="Lisbon" />
+      </CityInformation>
+
+      <PersonInformation
+        name="José"
+        age={27}
+        city="Lisbon"
+        team="benfica"
+        dateOfBirth={new Date(1993, 4, 13)}
+      />
+      <PersonInformation
+        name="Santi"
+        age={30}
+        city="Buenos Aires"
+        team="sporting"
+        dateOfBirth={new Date(1990, 2, 31)}
+      />
+      <PersonInformation
+        name="Aline"
+        age={29}
+        city="Lisbon"
+        team="porto"
+        dateOfBirth={new Date(1991, 4, 3)}
+      />
+      <PersonInformation
+        name="Cesar"
+        age={33}
+        city="Lisbon"
+        team="academica"
+        dateOfBirth={new Date(1986, 8, 11)}
+      />
     </div>
   );
 };
